@@ -1,4 +1,4 @@
-yeoman-hoganjs-engine [![NPM version](https://badge.fury.io/js/yeoman-hoganjs-engine.png)](http://badge.fury.io/js/yeoman-hoganjs-engine)]
+yeoman-hoganjs-engine [![NPM version](https://badge.fury.io/js/yeoman-hoganjs-engine.png)](http://badge.fury.io/js/yeoman-hoganjs-engine)
 ==============
 
 Hogan.js templating engine for Yeoman with underscore.string support.
