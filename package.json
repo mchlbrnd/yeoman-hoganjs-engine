@@ -1,0 +1,50 @@
+{
+  "name": "yeoman-hoganjs-engine",
+  "description": "Hogan.js templating engine for Yeoman using Underscore helpers",
+  "version": "0.0.1",
+  "keywords": [
+    "yeoman",
+    "engine",
+    "hogan.js",
+    "templates"
+  ],
+  "maintainers": [
+    {
+      "name": "Michael Wolbert",
+      "email": "michael.wolbert@gmail.com",
+      "web": "http://michaelwolbert.nl"
+    }
+  ],
+  "homepage": "https://github.com/mchlbrnd/yeoman-hoganjs-engine",
+  "demos": [
+    "https://github.com/mchlbrnd/yeoman-hoganjs-engine"
+  ],
+  "bugs": {
+    "url": "https://github.com/mchlbrnd/yeoman-hoganjs-engine/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mchlbrnd/yeoman-hoganjs-engine.git"
+  },
+  "licenses": [
+    {
+      "name": "MIT",
+      "url": "https://github.com/mchlbrnd/yeoman-hoganjs-engine/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "underscore.string": "^2.x.x",
+    "hogan.js": "^3.x.x"
+  },
+  "devDependencies": {
+    "mocha": "^1.x.x",
+    "yeoman-generator": "^0.17.x"
+  },
+  "main": "hoganjs_engine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
