@@ -1,7 +1,7 @@
 {
   "name": "yeoman-hoganjs-engine",
   "description": "Hogan.js templating engine for Yeoman using Underscore helpers",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "yeoman",
     "engine",
