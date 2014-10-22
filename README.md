@@ -1,27 +1,88 @@
-yeoman-hoganjs-engine [![NPM version](https://badge.fury.io/js/yeoman-hoganjs-engine.png)](http://badge.fury.io/js/yeoman-hoganjs-engine)
+# yeoman-hoganjs-engine 
+
+[![NPM version](https://badge.fury.io/js/yeoman-hoganjs-engine.png)](http://badge.fury.io/js/yeoman-hoganjs-engine) [![Build Status](https://travis-ci.org/mchlbrnd/yeoman-hoganjs-engine.png)](https://travis-ci.org/mchlbrnd/yeoman-hoganjs-engine)
+
 ==============
 
-Hogan.js templating engine for Yeoman with underscore.string support.
+## [Hogan.js]('http://twitter.github.io/hogan.js/') templating engine with [Underscore.string]('http://epeli.github.io/underscore.string/') support for [Yeoman]('http://yeoman.io/').
 
 ```sh
 > npm install yeoman-hoganjs-engine
 ```
 
-Adding the engine to your Yeoman generator:
+### Adding the engine to your Yeoman generator:
 ```javascript
-var hoganjsEngine = require('yeoman-hoganjs-engine');
-
-var HulkHoganGenerator = yeoman.generators.Base.extend({
-  constructor: function(args, opts, config) {
-    options.engine = hoganjsEngine;
-    yeoman.generators.Base.apply(this, args, opts);
-  },
-  ...
-}
+var engine = require('yeoman-hoganjs-engine'),
+    HulkHoganGenerator = yeoman.generators.NamedBase.extend({
+      constructor: function(args, opts, config) {
+        opts.engine = engine;
+        yeoman.generators.NamedBase.apply(this, args, opts);
+      },
+      ...
+};
 ```
+###  Underscore.string support
 
-Unfortunately, not all underscore.string functions are supported. Below you can find a list with Hogan.js templating examples.
+**Supported functions**
+* isBlank
+* stripTags
+* capitalize
+* clean
+* chars
+* swapCase
+* escapeHTML
+* unescapeHTML
+* escapeRegExp
+* join (Array based)
+* lines
+* reverse
+* succ
+* titleize
+* camelize
+* underscored
+* dasherize
+* classify
+* humanize
+* trim
+* ltrim
+* rtrim
+* words
+* slugify
+* quote || q
+* unquote
+* strip
+* lstrip
+* rstrip
 
-TODO
-
-TODO: add tests
+**Unsupported functions**
+* chop
+* count
+* splice
+* insert
+* include
+* startsWith
+* endsWith
+* pad
+* lpad
+* rpad
+* lrpad
+* sprintf
+* vsprintf
+* toNumber
+* numberFormat
+* strRight
+* strRightBack
+* strLeft
+* strLeftBack
+* toSentence
+* toSentenceSerial
+* surround
+* exports
+* repeat
+* naturalCmp
+* levenshtein
+* toBoolean
+* center
+* rjust
+* ljust
+* toBool
