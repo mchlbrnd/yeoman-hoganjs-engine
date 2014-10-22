@@ -2,15 +2,13 @@
 
 [![NPM version](https://badge.fury.io/js/yeoman-hoganjs-engine.png)](http://badge.fury.io/js/yeoman-hoganjs-engine) [![Build Status](https://travis-ci.org/mchlbrnd/yeoman-hoganjs-engine.png)](https://travis-ci.org/mchlbrnd/yeoman-hoganjs-engine)
 
-==============
-
-## [Hogan.js]('http://twitter.github.io/hogan.js/') templating engine with [Underscore.string]('http://epeli.github.io/underscore.string/') support for [Yeoman]('http://yeoman.io/').
+### [Hogan.js]('http://twitter.github.io/hogan.js/') templating engine with [Underscore.string]('http://epeli.github.io/underscore.string/') support for [Yeoman]('http://yeoman.io/').
 
 ```sh
 > npm install yeoman-hoganjs-engine
 ```
 
-### Adding the engine to your Yeoman generator:
+### Adding Hogan.js engine to your Yeoman generator
 ```javascript
 var engine = require('yeoman-hoganjs-engine'),
     HulkHoganGenerator = yeoman.generators.NamedBase.extend({
@@ -21,8 +19,38 @@ var engine = require('yeoman-hoganjs-engine'),
       ...
 };
 ```
-###  Underscore.string support
 
+### Using it!
+**Inside your generator template**
+```html
+Follow us at
+{{#tweets}}
+ <a href="http://twitter.com/{{name}}/>@{{name}}</a>
+{{/tweets}}
+```
+**Inside your generator action**
+```javascript
+...
+writing: function () {
+  this.tweets = [
+      { name: 'michaelwolbert' },
+      { name: 'hoganjs' },
+      { name: 'yeoman' }
+    ];
+  this.template('_template.hogan', 'template.html');
+}
+...
+
+```
+
+**Using Underscore.string**
+```html
+{{#classify}}{{myClass}}{{/classify}}
+
+```
+If myClass = 'myClass', then the above template would output MyClass. See below for supported Underscore.string functions.
+
+### Underscore.string
 **Supported functions**
 * isBlank
 * stripTags
