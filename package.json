@@ -36,8 +36,9 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "underscore.string": "^2.x.x",
-    "hogan.js": "^3.x.x"
+    "hogan.js": "^3.x.x",
+    "underscore": "^1.7.0",
+    "underscore.string": "^2.x.x"
   },
   "devDependencies": {
     "mocha": "^1.x.x",
@@ -45,6 +46,6 @@
   },
   "main": "hoganjs_engine.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   }
 }
