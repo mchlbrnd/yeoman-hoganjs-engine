@@ -10,11 +10,10 @@
 
 ### Adding Hogan.js engine to your Yeoman generator
 ```javascript
-var engine = require('yeoman-hoganjs-engine'),
-    HulkHoganGenerator = yeoman.generators.NamedBase.extend({
-      constructor: function(args, opts, config) {
-        opts.engine = engine;
-        yeoman.generators.NamedBase.apply(this, args, opts);
+var HulkHoganGenerator = yeoman.generators.NamedBase.extend({
+      engine: require('yeoman-hoganjs-engine'),
+      constructor: function() {
+        yeoman.generators.NamedBase.apply(this);
       },
       ...
 };
