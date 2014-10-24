@@ -15,10 +15,24 @@ var _sHelpers = Object.keys(_s)
     return o;
   }, {});
 
-var engine = module.exports = function engine(sourceTemplate, data) {
-  return hogan.compile(sourceTemplate).render(_.extend(_sHelpers, data));
-};
+var engine = module.exports = function (beginDelimiter, endDelimiter) {
+  var me = this;
 
-engine.detect = function (sourceTemplate) {
-  return sourceTemplate.indexOf('{{') > -1;
+  this.setDelimiter = function(beginDelimiter, endDelimiter) {
+    me._beginDelimiter = beginDelimiter || '{{';
+    me._endDelimiter = endDelimiter || '}}';
+    return me.engine;
+  };
+
+  this.engine = function (sourceTemplate, data) {
+    return hogan
+      .compile(sourceTemplate, {delimiters: me._beginDelimiter + ' ' + me._endDelimiter})
+      .render(_.extend(_sHelpers, data));
+  };
+
+  this.engine.detect = function(sourceTemplate) {
+    return sourceTemplate.indexOf(me._beginDelimiter) > -1;
+  };
+
+  return this.setDelimiter(beginDelimiter, endDelimiter);
 };

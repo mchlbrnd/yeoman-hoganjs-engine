@@ -1,7 +1,7 @@
 var yeoman = require('yeoman-generator'),
   helpers = yeoman.test,
   assert = yeoman.assert,
-  hoganjsEngine = require('../'),
+  hoganjsEngine = require('../')(),
   path = require('path').join(__dirname);
 
 describe('yeoman-hoganjs-engine', function () {
